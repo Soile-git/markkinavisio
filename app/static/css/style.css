@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Source+Serif+Pro&family=DynaPuff&display=swap');
+
+
+body{
+    background-image: url("/static/pics/background.png");
+    background-repeat: repeat;
+    font-style: Source Sans Pro, Arial, Helvetica, sans-serif;
+    width: 100%;
+  }

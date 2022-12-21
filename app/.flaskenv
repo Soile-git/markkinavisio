@@ -1,0 +1,4 @@
+FLASK_APP=app.py
+FLASK_DEGUG=1
+FLASK_RUN_PORT=5000
+host='0.0.0.0'

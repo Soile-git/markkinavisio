@@ -1,0 +1,77 @@
+
+    {% extends "bootstrap/base.html" %}
+
+    <!DOCTYPE html>
+    <html lang="fi">
+
+    {% block metas %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}"
+    type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"
+    type="image/x-icon">
+    {% endblock %}
+
+    {% block title %}Markkinavisio{% endblock %}
+
+    {% block navbar %}
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid navbar-dark bg-dark text-white fixed-top">
+            <a class="navbar-brand" href="/">
+                <img src="/static/favicon.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Markkinavisio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-expand-sm navbar-collapse" id="collapsibleNavbar">
+                <div class="navbar-nav text-center">
+                <ul class="nav nav-pills text-bg-dark">
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if active_page == 'index' else '' }}" aria-current="page" href="/">Esittely</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if active_page == 'analysis' else '' }}" href="analysis">Analyysit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if active_page == 'resource' else '' }}" href="resource">Tuki</a>
+                    </li>
+                    <li class="nav-item dropdown text-center">
+                        <a class="nav-link dropdown-toggle {{ 'active' if active_page == 'settings' else '' }}" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Valinnat</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="register">Rekisteröidy</a></li>
+                            <li><a class="dropdown-item" href="login">Kirjautuminen</a></li>
+                            <li><a class="dropdown-item" href="contact">Palaute</a></li>
+                            <li><a class="dropdown-item" href="logout">Kirjaudu ulos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block page_content %}{% endblock %}
+    
+
+    <section class="fixed-bottom">
+        <!-- Footer -->
+        <footer class="text-center text-white text-bg-secondary">
+          <!-- Grid container -->
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="/register">Markkinavisio.fi</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </section>
+    {% endblock %}
+    
+    </html>
+
+
